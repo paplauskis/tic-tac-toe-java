@@ -9,7 +9,7 @@ public class EasyComputer extends Computer {
     }
 
     protected int[] getMoveCoords(Gameboard gameboard) {
-        printLoadingDots();
+        logger.printLoadingDots();
         int[] randomCoords = returnRandomCoords(gameboard);
 
         return new int[]{randomCoords[0], randomCoords[1]};

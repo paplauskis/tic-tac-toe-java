@@ -11,7 +11,7 @@ public class MediumComputer extends Computer {
     }
 
     protected int[] getMoveCoords(Gameboard gameboard) {
-        printLoadingDots();
+        logger.printLoadingDots();
 
         int[] winningMove = findBestMove(gameboard.getGameboard(), getSymbol());
         if (winningMove != null) {

@@ -2,16 +2,19 @@ package player;
 
 import java.util.Random;
 import game.Gameboard;
+import util.ConsoleLogger;
 
 public abstract class Computer implements Player {
     private final char symbol;
     private final String name;
     private final Random random;
+    protected final ConsoleLogger logger;
 
     public Computer(char symbol, String name) {
         this.symbol = symbol;
         this.name = name;
         this.random = new Random();
+        this.logger = new ConsoleLogger();
     }
 
     public char getSymbol() {
@@ -46,15 +49,5 @@ public abstract class Computer implements Player {
                 getSymbol());
 
         return coords;
-    }
-
-    protected void printLoadingDots() {
-        for (int i = 0; i < 3; i++) {
-            try {
-                System.out.print(". ");
-                Thread.sleep(500);
-            } catch (InterruptedException ignored) {}
-        }
-        System.out.println(" ");
     }
 }

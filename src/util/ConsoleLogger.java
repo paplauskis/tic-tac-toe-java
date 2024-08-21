@@ -40,4 +40,14 @@ public class ConsoleLogger {
         System.out.println("Players: 'easy', 'medium', 'hard' (computers), 'human'");
     }
 
+    public void printLoadingDots() {
+        for (int i = 0; i < 3; i++) {
+            try {
+                System.out.print(". ");
+                Thread.sleep(500);
+            } catch (InterruptedException ignored) {}
+        }
+        System.out.println(" ");
+    }
+
 }
